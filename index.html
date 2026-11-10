@@ -14,8 +14,29 @@
     <meta property="og:image" content="/images/profile-avatar-512.webp" />
     
     <title>Rahat Md Mahadi Hasan | AI & Computer Engineering</title>
+
+    <!-- Theme Initialization Script: Prevents Flash of Unstyled Theme (FOUC) -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('rahat-theme');
+          var theme = saved;
+          if (theme !== 'dark' && theme !== 'light') {
+            theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          }
+          var root = document.documentElement;
+          if (theme === 'light') {
+            root.classList.remove('dark');
+            root.classList.add('light');
+          } else {
+            root.classList.remove('light');
+            root.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
     
-    <!-- Fonts preconnect and Google Fonts -->
+    <!-- Fonts preconnect and Google Fonts with font-display: swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -28,4 +49,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

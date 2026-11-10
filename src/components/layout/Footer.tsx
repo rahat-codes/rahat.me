@@ -99,7 +99,7 @@ export const Footer: React.FC<FooterProps> = ({
                 </a>
               </li>
               <li>
-                <a href="/styleguide" className="hover:text-amber transition-colors text-amber/80">
+                <a href="/styleguide" className="hover:text-amber transition-colors text-amber">
                   [!] Styleguide
                 </a>
               </li>
@@ -110,12 +110,12 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="space-y-3 flex flex-col justify-between">
             <div>
               <h4 className="font-mono text-xs text-foreground font-semibold uppercase tracking-hud">
-                Locale &amp; Time
+                Language &amp; Region
               </h4>
               <div className="mt-2 space-y-2 font-mono text-xs">
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-foreground-muted">KST (UTC+9) · BUSAN</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber" />
+                  <span className="text-foreground-muted">TONGMYONG UNIV · BUSAN</span>
                 </div>
                 <div className="pt-2">
                   <LanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
@@ -147,4 +147,3 @@ export const Footer: React.FC<FooterProps> = ({
     </footer>
   );
 };
-

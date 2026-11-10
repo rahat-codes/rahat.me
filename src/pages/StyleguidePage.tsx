@@ -63,7 +63,7 @@ export const StyleguidePage: React.FC = () => {
               <div className="w-full h-12 bg-background border border-border rounded-sm" />
               <div className="font-mono text-xs">
                 <p className="font-semibold text-foreground">Background</p>
-                <p className="text-[10px] text-foreground-faint">var(--bg-main)</p>
+                <p className="text-[10px] text-foreground-faint">#0E0F11 / #F7F7F6</p>
               </div>
             </div>
 
@@ -71,7 +71,7 @@ export const StyleguidePage: React.FC = () => {
               <div className="w-full h-12 bg-surface border border-border rounded-sm" />
               <div className="font-mono text-xs">
                 <p className="font-semibold text-foreground">Surface</p>
-                <p className="text-[10px] text-foreground-faint">var(--bg-surface)</p>
+                <p className="text-[10px] text-foreground-faint">#16181B / #FFFFFF</p>
               </div>
             </div>
 
@@ -79,7 +79,7 @@ export const StyleguidePage: React.FC = () => {
               <div className="w-full h-12 bg-surface-secondary border border-border-subtle rounded-sm" />
               <div className="font-mono text-xs">
                 <p className="font-semibold text-foreground">Surface Sub</p>
-                <p className="text-[10px] text-foreground-faint">var(--bg-surface-sub)</p>
+                <p className="text-[10px] text-foreground-faint">#1F2227 / #EFEFEF</p>
               </div>
             </div>
 
@@ -87,7 +87,7 @@ export const StyleguidePage: React.FC = () => {
               <div className="w-full h-12 bg-border rounded-sm" />
               <div className="font-mono text-xs">
                 <p className="font-semibold text-foreground">Border 1px</p>
-                <p className="text-[10px] text-foreground-faint">var(--border-main)</p>
+                <p className="text-[10px] text-foreground-faint">#23262B / #E2E2E0</p>
               </div>
             </div>
 
@@ -95,7 +95,7 @@ export const StyleguidePage: React.FC = () => {
               <div className="w-full h-12 bg-amber rounded-sm shadow-amber-glow" />
               <div className="font-mono text-xs">
                 <p className="font-semibold text-amber">Accent Amber</p>
-                <p className="text-[10px] text-foreground-faint">#F59E0B / #FB923C</p>
+                <p className="text-[10px] text-foreground-faint">Text AAA &gt; 7.0:1</p>
               </div>
             </div>
 
@@ -105,7 +105,7 @@ export const StyleguidePage: React.FC = () => {
               </div>
               <div className="font-mono text-xs">
                 <p className="font-semibold text-foreground">Foreground</p>
-                <p className="text-[10px] text-foreground-faint">var(--text-main)</p>
+                <p className="text-[10px] text-foreground-faint">AAA &gt; 15.0:1</p>
               </div>
             </div>
           </div>

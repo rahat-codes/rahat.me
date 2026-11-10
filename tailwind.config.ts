@@ -24,9 +24,10 @@ const config: Config = {
           faint: 'var(--text-faint)',
         },
         amber: {
-          DEFAULT: '#F59E0B',
-          hover: '#FB923C',
-          glow: 'rgba(245, 158, 11, 0.15)',
+          DEFAULT: 'var(--accent-amber)',
+          text: 'var(--accent-amber-text)',
+          hover: 'var(--accent-amber-hover)',
+          glow: 'var(--accent-amber-glow)',
         },
       },
       fontFamily: {
