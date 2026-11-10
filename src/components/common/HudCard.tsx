@@ -80,3 +80,4 @@ export const HudCard: React.FC<HudCardProps> = ({
     </CornerFrame>
   );
 };
+
