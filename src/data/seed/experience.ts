@@ -130,3 +130,4 @@ export const seedExperience: ExperienceItem[] = [
     showOnPublicSite: true, // Configurable from admin
   },
 ];
+

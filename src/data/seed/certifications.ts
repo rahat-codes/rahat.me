@@ -183,3 +183,4 @@ export const seedCertifications: CertificationItem[] = [
     // Rule: "Show no score unless I add it."
   },
 ];
+

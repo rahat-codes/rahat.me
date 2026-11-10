@@ -102,3 +102,4 @@ export const seedProfile: ProfileData = {
     { en: 'Embedded Systems', ko: '임베디드 시스템', bn: 'এমবেডেড সিস্টেম' },
   ],
 };
+

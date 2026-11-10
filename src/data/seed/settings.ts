@@ -42,3 +42,4 @@ export const seedSettings: SiteSettings = {
   enable3dModel: true,
   modelUrl: '/models/hero.glb',
 };
+

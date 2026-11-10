@@ -178,3 +178,4 @@ export const seedSkills: SkillItem[] = [
     proficiency: 4,
   },
 ];
+

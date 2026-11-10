@@ -297,3 +297,4 @@ export const seedProjects: ProjectItem[] = [
     featured: true,
   },
 ];
+
