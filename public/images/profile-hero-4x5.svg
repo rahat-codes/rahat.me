@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16181B" />
+      <stop offset="100%" stop-color="#0E0F11" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#23262B" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="1000" fill="url(#bgGrad)" />
+  <rect width="800" height="1000" fill="url(#grid)" opacity="0.6" />
+
+  <!-- Outer HUD Frame with Corner Ticks -->
+  <rect x="24" y="24" width="752" height="952" stroke="#23262B" stroke-width="2" rx="4" />
+  <path d="M 24 64 L 24 24 L 64 24" stroke="#F59E0B" stroke-width="3" fill="none" />
+  <path d="M 776 64 L 776 24 L 736 24" stroke="#F59E0B" stroke-width="3" fill="none" />
+  <path d="M 24 936 L 24 976 L 64 976" stroke="#F59E0B" stroke-width="3" fill="none" />
+  <path d="M 776 936 L 776 976 L 736 976" stroke="#F59E0B" stroke-width="3" fill="none" />
+
+  <!-- Center Abstract Geometric Technical Core -->
+  <circle cx="400" cy="460" r="180" stroke="#23262B" stroke-width="2" stroke-dasharray="8 8" />
+  <circle cx="400" cy="460" r="130" stroke="#F59E0B" stroke-width="1.5" opacity="0.4" />
+  <polygon points="400,320 520,530 280,530" stroke="#EDEDED" stroke-width="2" opacity="0.3" fill="none" />
+  <polygon points="400,600 520,390 280,390" stroke="#F59E0B" stroke-width="2" opacity="0.5" fill="none" />
+  <circle cx="400" cy="460" r="12" fill="#F59E0B" opacity="0.8" />
+
+  <!-- Crosshairs -->
+  <line x1="180" y1="460" x2="620" y2="460" stroke="#23262B" stroke-width="1" />
+  <line x1="400" y1="240" x2="400" y2="680" stroke="#23262B" stroke-width="1" />
+
+  <!-- Micro Technical Text -->
+  <text x="48" y="70" fill="#9AA0A6" font-family="monospace" font-size="14" letter-spacing="2">SYS_ID: RMH-BUSAN-48520</text>
+  <text x="752" y="70" text-anchor="end" fill="#F59E0B" font-family="monospace" font-size="14" letter-spacing="2">STATUS: ACTIVE</text>
+  <text x="400" y="730" text-anchor="middle" fill="#EDEDED" font-family="monospace" font-size="20" font-weight="600" letter-spacing="4">PROFILE HERO PLACEHOLDER</text>
+  <text x="400" y="760" text-anchor="middle" fill="#9AA0A6" font-family="monospace" font-size="14" letter-spacing="2">[ 4 : 5 RATIO // 800 x 1000 ]</text>
+  <text x="400" y="790" text-anchor="middle" fill="#F59E0B" font-family="monospace" font-size="13" letter-spacing="1.5">DROP REAL PHOTO TO /public/images/profile-hero-4x5.webp</text>
+  <text x="48" y="940" fill="#9AA0A6" font-family="monospace" font-size="12">TONGMYONG UNIV // AI &amp; CE</text>
+  <text x="752" y="940" text-anchor="end" fill="#9AA0A6" font-family="monospace" font-size="12">LAT 35.1278° N · LON 129.0888° E</text>
+</svg>

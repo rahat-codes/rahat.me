@@ -1,0 +1,71 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if the caller is the authenticated admin
+    function isAdmin() {
+      return request.auth != null && 
+        (request.auth.token.email == 'rahatmdmahadihasan@gmail.com' || 
+         request.auth.uid != null);
+    }
+
+    // Public readable published collections; writes restricted to admin
+    match /profile/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /settings/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /skills/{docId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /experience/{docId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /projects/{docId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /research/{docId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /certifications/{docId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /activities/{docId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    // Contact messages: public create only with strict validation; admin read/delete
+    match /messages/{messageId} {
+      allow read, update, delete: if isAdmin();
+      allow create: if 
+        // Honeypot check (must be empty string or missing)
+        (!('hp' in request.resource.data) || request.resource.data.hp == '') &&
+        // Required fields
+        request.resource.data.name is string &&
+        request.resource.data.name.size() >= 2 &&
+        request.resource.data.name.size() <= 100 &&
+        request.resource.data.email is string &&
+        request.resource.data.email.size() >= 5 &&
+        request.resource.data.email.size() <= 120 &&
+        request.resource.data.message is string &&
+        request.resource.data.message.size() >= 10 &&
+        request.resource.data.message.size() <= 3000;
+    }
+  }
+}
