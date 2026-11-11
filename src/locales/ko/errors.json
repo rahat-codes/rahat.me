@@ -1,0 +1,10 @@
+{
+  "notFound_heading": "404 — 페이지를 찾을 수 없습니다",
+  "notFound_body": "찾으시는 페이지가 존재하지 않거나 이동되었습니다.",
+  "notFound_cta": "홈으로 돌아가기",
+  "loading": "로딩 중…",
+  "error_heading": "오류가 발생했습니다",
+  "error_body": "예기치 못한 오류가 발생했습니다. 페이지를 새로고침 해주세요.",
+  "error_retry": "재시도"
+}
+

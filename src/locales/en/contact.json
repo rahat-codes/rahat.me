@@ -1,0 +1,19 @@
+{
+  "heading": "Get in Touch",
+  "subheading": "Whether it's a collaboration, opportunity, or just a question — I'd love to hear from you.",
+  "name": "Name",
+  "email": "Email",
+  "subject": "Subject",
+  "message": "Message",
+  "send": "Send Message",
+  "sending": "Sending…",
+  "success": "Message sent! I'll reply within 48 hours.",
+  "error": "Something went wrong. Please try again or email me directly.",
+  "or": "or reach me directly at",
+  "placeholder_name": "Your name",
+  "placeholder_email": "your@email.com",
+  "placeholder_subject": "What's this about?",
+  "placeholder_message": "Your message…",
+  "links_heading": "Find me on"
+}
+

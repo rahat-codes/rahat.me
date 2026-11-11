@@ -1,0 +1,13 @@
+{
+  "greeting": "안녕하세요, 저는",
+  "name": "라하트 마하디 하산",
+  "tagline": "신뢰할 수 있는 AI 시스템과 이를 둘러싼 애플리케이션을 구축합니다.",
+  "currentlyChip": "Den of Builders 대표 · 부산",
+  "cta_projects": "프로젝트 보기",
+  "cta_contact": "연락하기",
+  "cta_cv": "이력서 다운로드",
+  "roles": ["AI 엔지니어", "컴퓨터 비전", "풀스택 개발자"],
+  "scroll": "스크롤하여 탐색",
+  "imgAlt": "라하트 마하디 하산 — 프로필 사진"
+}
+

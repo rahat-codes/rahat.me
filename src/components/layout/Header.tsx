@@ -1,32 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import { clsx } from 'clsx';
+import { useTranslation } from 'react-i18next';
 import { LiquidButton } from '@/components/common/LiquidButton';
 import { ThemeToggle } from '@/components/common/ThemeToggle';
 import { LanguageSwitcher } from '@/components/common/LanguageSwitcher';
 import { MobileNavSheet, type NavItem } from './MobileNavSheet';
-import type { SupportedLanguage } from '@/types/portfolio';
-
-const NAV_ITEMS: NavItem[] = [
-  { id: 'about', label: 'About', href: '#about' },
-  { id: 'skills', label: 'Skills', href: '#skills' },
-  { id: 'experience', label: 'Experience', href: '#experience' },
-  { id: 'projects', label: 'Projects', href: '#projects' },
-  { id: 'research', label: 'Research', href: '#research' },
-  { id: 'location', label: 'Location', href: '#location' },
-];
 
 export interface HeaderProps {
-  currentLang?: SupportedLanguage;
-  onLanguageChange?: (lang: SupportedLanguage) => void;
   activeSection?: string;
 }
 
-export const Header: React.FC<HeaderProps> = ({
-  currentLang = 'en',
-  onLanguageChange,
-  activeSection = 'hero',
-}) => {
+export const Header: React.FC<HeaderProps> = ({ activeSection = 'hero' }) => {
+  const { t } = useTranslation('nav');
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -37,6 +23,15 @@ export const Header: React.FC<HeaderProps> = ({
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const NAV_ITEMS: NavItem[] = [
+    { id: 'about', label: t('about'), href: '#about' },
+    { id: 'skills', label: t('skills'), href: '#skills' },
+    { id: 'experience', label: t('experience'), href: '#experience' },
+    { id: 'projects', label: t('projects'), href: '#projects' },
+    { id: 'research', label: t('research'), href: '#research' },
+    { id: 'location', label: t('location'), href: '#location' },
+  ];
 
   return (
     <>
@@ -69,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-6" aria-label="Primary navigation">
+          <nav className="hidden lg:flex items-center gap-6" aria-label={t('about')}>
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -94,11 +89,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Actions & Utilities */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <LanguageSwitcher
-              currentLang={currentLang}
-              onLanguageChange={onLanguageChange}
-              className="hidden sm:inline-block"
-            />
+            <LanguageSwitcher className="hidden sm:inline-block" />
             <ThemeToggle className="hidden sm:inline-flex" />
 
             <LiquidButton
@@ -108,14 +99,14 @@ export const Header: React.FC<HeaderProps> = ({
               size="sm"
               className="hidden md:inline-flex"
             >
-              Contact
+              {t('contact')}
             </LiquidButton>
 
             {/* Mobile Hamburger Button */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              aria-label="Open mobile navigation menu"
+              aria-label={t('openMenu')}
               className="lg:hidden p-2 border border-border bg-surface text-foreground-muted hover:text-amber hover:border-amber rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber"
             >
               <Menu className="w-4 h-4" />
@@ -130,10 +121,7 @@ export const Header: React.FC<HeaderProps> = ({
         onClose={() => setMobileMenuOpen(false)}
         items={NAV_ITEMS}
         activeSection={activeSection}
-        currentLang={currentLang}
-        onLanguageChange={onLanguageChange}
       />
     </>
   );
 };
-

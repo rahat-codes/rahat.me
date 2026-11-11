@@ -1,0 +1,10 @@
+{
+  "notFound_heading": "404 — Page Not Found",
+  "notFound_body": "The page you're looking for doesn't exist or has moved.",
+  "notFound_cta": "Back to Home",
+  "loading": "Loading…",
+  "error_heading": "Something went wrong",
+  "error_body": "An unexpected error occurred. Please refresh the page.",
+  "error_retry": "Retry"
+}
+

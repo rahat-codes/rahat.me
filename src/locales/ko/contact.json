@@ -1,0 +1,19 @@
+{
+  "heading": "연락하기",
+  "subheading": "협업, 취업 기회, 또는 단순한 질문이라도 환영합니다.",
+  "name": "이름",
+  "email": "이메일",
+  "subject": "제목",
+  "message": "메시지",
+  "send": "메시지 보내기",
+  "sending": "전송 중…",
+  "success": "메시지가 전송되었습니다! 48시간 이내에 답변드리겠습니다.",
+  "error": "오류가 발생했습니다. 다시 시도하거나 직접 이메일을 보내주세요.",
+  "or": "또는 직접 이메일로 연락하세요",
+  "placeholder_name": "이름을 입력하세요",
+  "placeholder_email": "your@email.com",
+  "placeholder_subject": "어떤 내용인가요?",
+  "placeholder_message": "메시지를 입력하세요…",
+  "links_heading": "소셜 미디어"
+}
+

@@ -1,0 +1,22 @@
+{
+  "login": "관리자 로그인",
+  "logout": "로그아웃",
+  "dashboard": "대시보드",
+  "collections": "컬렉션",
+  "save": "저장",
+  "saving": "저장 중…",
+  "saved": "저장됨",
+  "delete": "삭제",
+  "confirmDelete": "이 항목을 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
+  "cancel": "취소",
+  "publish": "게시",
+  "draft": "임시 저장",
+  "importSeed": "초기 콘텐츠 가져오기",
+  "importConfirm": "Firestore에 시드 데이터를 추가합니다. 기존 문서는 덮어쓰지 않습니다. 계속하시겠습니까?",
+  "lang_en": "영어",
+  "lang_ko": "한국어",
+  "lang_bn": "벵골어",
+  "completeness": "완성도",
+  "missingTranslation": "번역 누락"
+}
+

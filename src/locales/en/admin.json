@@ -1,0 +1,22 @@
+{
+  "login": "Admin Login",
+  "logout": "Sign Out",
+  "dashboard": "Dashboard",
+  "collections": "Collections",
+  "save": "Save",
+  "saving": "Saving…",
+  "saved": "Saved",
+  "delete": "Delete",
+  "confirmDelete": "Are you sure you want to delete this item? This cannot be undone.",
+  "cancel": "Cancel",
+  "publish": "Publish",
+  "draft": "Save as Draft",
+  "importSeed": "Import Starter Content",
+  "importConfirm": "This will populate Firestore with seed data. Existing documents will NOT be overwritten. Continue?",
+  "lang_en": "English",
+  "lang_ko": "Korean",
+  "lang_bn": "Bengali",
+  "completeness": "Completeness",
+  "missingTranslation": "Missing translation"
+}
+

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { X, ArrowRight } from 'lucide-react';
 import { clsx } from 'clsx';
+import { useTranslation } from 'react-i18next';
 import { LiquidButton } from '@/components/common/LiquidButton';
 import { ThemeToggle } from '@/components/common/ThemeToggle';
 import { LanguageSwitcher } from '@/components/common/LanguageSwitcher';
-import type { SupportedLanguage } from '@/types/portfolio';
 
 export interface NavItem {
   id: string;
@@ -17,8 +17,6 @@ export interface MobileNavSheetProps {
   onClose: () => void;
   items: NavItem[];
   activeSection?: string;
-  currentLang?: SupportedLanguage;
-  onLanguageChange?: (lang: SupportedLanguage) => void;
 }
 
 export const MobileNavSheet: React.FC<MobileNavSheetProps> = ({
@@ -26,9 +24,9 @@ export const MobileNavSheet: React.FC<MobileNavSheetProps> = ({
   onClose,
   items,
   activeSection,
-  currentLang = 'en',
-  onLanguageChange,
 }) => {
+  const { t } = useTranslation('nav');
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -65,7 +63,7 @@ export const MobileNavSheet: React.FC<MobileNavSheetProps> = ({
             <button
               type="button"
               onClick={onClose}
-              aria-label="Close navigation"
+              aria-label={t('closeMenu')}
               className="p-1.5 border border-border text-foreground-muted hover:text-amber hover:border-amber rounded-sm transition-colors"
             >
               <X className="w-4 h-4" />
@@ -73,7 +71,7 @@ export const MobileNavSheet: React.FC<MobileNavSheetProps> = ({
           </div>
 
           {/* Nav Items */}
-          <nav className="mt-6 space-y-1">
+          <nav className="mt-6 space-y-1" aria-label="Mobile navigation links">
             {items.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -99,7 +97,7 @@ export const MobileNavSheet: React.FC<MobileNavSheetProps> = ({
         {/* Footer actions */}
         <div className="pt-6 border-t border-border space-y-4">
           <div className="flex items-center justify-between gap-3">
-            <LanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
+            <LanguageSwitcher />
             <ThemeToggle />
           </div>
 
@@ -111,7 +109,7 @@ export const MobileNavSheet: React.FC<MobileNavSheetProps> = ({
             className="w-full"
             onClick={onClose}
           >
-            Contact
+            {t('contact')}
           </LiquidButton>
 
           <p className="font-mono text-[10px] text-center text-foreground-faint tracking-wider">
@@ -122,4 +120,3 @@ export const MobileNavSheet: React.FC<MobileNavSheetProps> = ({
     </div>
   );
 };
-

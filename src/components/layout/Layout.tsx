@@ -1,23 +1,18 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { HudStatusStrip } from '@/components/common/HudStatusStrip';
 import { AmbientCursor } from '@/components/common/AmbientCursor';
-import type { SupportedLanguage } from '@/types/portfolio';
 
 export interface LayoutProps {
   children: React.ReactNode;
-  currentLang?: SupportedLanguage;
-  onLanguageChange?: (lang: SupportedLanguage) => void;
   activeSection?: string;
 }
 
-export const Layout: React.FC<LayoutProps> = ({
-  children,
-  currentLang = 'en',
-  onLanguageChange,
-  activeSection = 'hero',
-}) => {
+export const Layout: React.FC<LayoutProps> = ({ children, activeSection = 'hero' }) => {
+  const { t } = useTranslation('nav');
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col antialiased selection:bg-amber selection:text-black pt-6">
       {/* Ambient UI: Slim Top HUD Strip (Asia/Seoul Clock + Status line) */}
@@ -31,15 +26,11 @@ export const Layout: React.FC<LayoutProps> = ({
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-8 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-amber focus:text-black focus:font-mono focus:text-xs focus:font-bold focus:rounded-sm focus:shadow-amber-glow focus:outline-none"
       >
-        [ SKIP TO MAIN CONTENT ]
+        {t('skipToContent')}
       </a>
 
       {/* Persistent Technical Header */}
-      <Header
-        currentLang={currentLang}
-        onLanguageChange={onLanguageChange}
-        activeSection={activeSection}
-      />
+      <Header activeSection={activeSection} />
 
       {/* Main Content Area */}
       <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
@@ -47,7 +38,7 @@ export const Layout: React.FC<LayoutProps> = ({
       </main>
 
       {/* Persistent Technical Footer */}
-      <Footer currentLang={currentLang} onLanguageChange={onLanguageChange} />
+      <Footer />
     </div>
   );
 };
