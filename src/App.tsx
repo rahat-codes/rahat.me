@@ -1,13 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { ThemeProvider } from '@/context';
+import { LenisProvider } from '@/context/LenisProvider';
 import { Layout } from '@/components/layout/Layout';
 import { StyleguidePage } from '@/pages/StyleguidePage';
+import { MotionTestPage } from '@/pages/MotionTestPage';
 import { CornerFrame } from '@/components/common/CornerFrame';
 import { LiquidButton } from '@/components/common/LiquidButton';
 import { TechBadge } from '@/components/common/TechBadge';
 import { seedProfile } from '@/data/seed';
-import { Terminal, ArrowRight, BookOpen } from 'lucide-react';
+import { Terminal, ArrowRight, BookOpen, Activity } from 'lucide-react';
 
 const HomePagePreview: React.FC = () => {
   return (
@@ -39,12 +41,14 @@ const HomePagePreview: React.FC = () => {
               <LiquidButton variant="primary" size="md" icon={<ArrowRight className="w-4 h-4" />}>
                 View Projects
               </LiquidButton>
-              <LiquidButton variant="secondary" size="md" as="a" href="#about">
-                Download CV
-              </LiquidButton>
+              <Link to="/motion-test">
+                <LiquidButton variant="secondary" size="md" icon={<Activity className="w-4 h-4" />}>
+                  Motion Test Engine
+                </LiquidButton>
+              </Link>
               <Link to="/styleguide">
                 <LiquidButton variant="outline" size="md" icon={<BookOpen className="w-4 h-4" />}>
-                  Explore Styleguide
+                  Styleguide
                 </LiquidButton>
               </Link>
             </div>
@@ -73,46 +77,46 @@ const HomePagePreview: React.FC = () => {
         </div>
       </section>
 
-      {/* Stage 2 Component Test Section */}
+      {/* Stage 3 Verification Shortcuts */}
       <section className="border-t border-border pt-12 space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 font-mono text-xs text-amber tracking-hud">
             <Terminal className="w-4 h-4" />
-            <span>STAGE 2 DESIGN SYSTEM // VERIFIED</span>
+            <span>STAGE 3 MOTION FOUNDATION // ONLINE</span>
           </div>
           <Link
-            to="/styleguide"
+            to="/motion-test"
             className="font-mono text-xs text-foreground-muted hover:text-amber transition-colors flex items-center gap-1"
           >
-            <span>FULL SPECIFICATION</span>
+            <span>OPEN DIAGNOSTICS</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <CornerFrame label="HUD CONTAINER" sublabel="TICKED BORDERS">
+          <CornerFrame label="SHARED RAF TICKER" sublabel="GSAP + LENIS">
             <div className="space-y-2">
-              <h4 className="text-sm font-semibold text-foreground">Corner Ticks &amp; Micro Labels</h4>
+              <h4 className="text-sm font-semibold text-foreground">Single Animation Loop</h4>
               <p className="text-xs text-foreground-muted">
-                1px border with amber corner ticks and configurable labels. Scales fluidly above 1440px.
+                Lenis autoRaf: false driven from gsap.ticker. lagSmoothing(0) ensures zero scroll de-sync.
               </p>
             </div>
           </CornerFrame>
 
-          <CornerFrame label="WCAG 2.2 AA" sublabel="CONTRAST &amp; ACCESSIBILITY">
+          <CornerFrame label="AMBIENT UI" sublabel="CUSTOM CURSOR &amp; HUD">
             <div className="space-y-2">
-              <h4 className="text-sm font-semibold text-foreground">High Contrast &amp; Focus Rings</h4>
+              <h4 className="text-sm font-semibold text-foreground">Seoul Time &amp; Cursor Dot</h4>
               <p className="text-xs text-foreground-muted">
-                Focus-visible amber rings, skip-to-content keyboard link, and dual charcoal/warm-white palettes.
+                Live Asia/Seoul clock and crossfading status lines in the top HUD strip. Pointer-events none.
               </p>
             </div>
           </CornerFrame>
 
-          <CornerFrame label="TRILINGUAL READY" sublabel="EN / KO / BN">
+          <CornerFrame label="ZERO MEMORY LEAKS" sublabel="LIFECYCLE MANAGEMENT">
             <div className="space-y-2">
-              <h4 className="text-sm font-semibold text-foreground">Typographic Isolation</h4>
+              <h4 className="text-sm font-semibold text-foreground">Deterministic Cleanups</h4>
               <p className="text-xs text-foreground-muted">
-                Korean word-break keep-all, Bengali 1.78 line-heights, and zero text overflow down to 360px.
+                All ScrollTrigger instances, timelines, and ticker callbacks dispose cleanly on route navigation.
               </p>
             </div>
           </CornerFrame>
@@ -125,15 +129,18 @@ const HomePagePreview: React.FC = () => {
 export const App: React.FC = () => {
   return (
     <ThemeProvider>
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<HomePagePreview />} />
-            <Route path="/styleguide" element={<StyleguidePage />} />
-            <Route path="*" element={<HomePagePreview />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
+      <LenisProvider>
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<HomePagePreview />} />
+              <Route path="/styleguide" element={<StyleguidePage />} />
+              <Route path="/motion-test" element={<MotionTestPage />} />
+              <Route path="*" element={<HomePagePreview />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </LenisProvider>
     </ThemeProvider>
   );
 };
