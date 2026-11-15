@@ -24,3 +24,4 @@ export function localizeArray(
   if (!items || !Array.isArray(items)) return [];
   return items.map((item) => localize(item, lang));
 }
+
