@@ -116,6 +116,10 @@ void i18n
     interpolation: {
       escapeValue: false, // React already escapes
     },
+    parseMissingKeyHandler: (_key) => {
+      // Rule 8.5: Never render raw key syntax (e.g. "hero.missing") on the public site
+      return '';
+    },
     react: {
       useSuspense: false,
     },

@@ -265,3 +265,10 @@ export const repository = {
   },
 };
 
+// Global browser hook for seeding Firestore prior to Stage 8 Admin CMS
+if (typeof window !== 'undefined') {
+  (window as unknown as { __seedFirestore: (overwrite?: boolean) => Promise<unknown> }).__seedFirestore =
+    (overwrite = false) => repository.importStarterContent(overwrite);
+}
+
+

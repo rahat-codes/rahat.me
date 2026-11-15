@@ -99,6 +99,7 @@ export const MotionTestPage: React.FC = () => {
     });
 
     return () => {
+      tween?.scrollTrigger?.kill();
       tween?.kill();
     };
   }, []);
