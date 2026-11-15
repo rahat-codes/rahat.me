@@ -56,6 +56,12 @@ interface LangShellProps {
   children: React.ReactNode;
 }
 
+const TITLES: Record<SupportedLang, string> = {
+  en: 'Rahat Md Mahadi Hasan | AI & Computer Engineering',
+  ko: '라하트 마하디 하산 | AI 및 컴퓨터공학',
+  bn: 'রাহাত মো. মেহেদী হাসান | এআই ও কম্পিউটার ইঞ্জিনিয়ারিং',
+};
+
 const LangShell: React.FC<LangShellProps> = ({ children }) => {
   const { lang } = useParams<{ lang: string }>();
   const navigate = useNavigate();
@@ -73,6 +79,9 @@ const LangShell: React.FC<LangShellProps> = ({ children }) => {
 
     // Update <html lang>
     document.documentElement.lang = LANG_LOCALE[activeLang];
+
+    // Update document title
+    document.title = TITLES[activeLang];
 
     // Update body font class
     const body = document.body;
