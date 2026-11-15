@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Terminal,
   Shield,
@@ -9,6 +9,7 @@ import {
   Download,
   CheckCircle2,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { CornerFrame } from '@/components/common/CornerFrame';
 import { LiquidButton } from '@/components/common/LiquidButton';
 import { TechBadge } from '@/components/common/TechBadge';
@@ -16,11 +17,11 @@ import { HudCard } from '@/components/common/HudCard';
 import { ThemeToggle } from '@/components/common/ThemeToggle';
 import { LanguageSwitcher } from '@/components/common/LanguageSwitcher';
 import { useTheme } from '@/hooks/useTheme';
-import type { SupportedLanguage } from '@/types/portfolio';
+import { useLang } from '@/hooks/useLang';
 
 export const StyleguidePage: React.FC = () => {
   const { theme } = useTheme();
-  const [selectedLang, setSelectedLang] = useState<SupportedLanguage>('en');
+  const { lang } = useLang();
 
   return (
     <div className="min-h-screen bg-background text-foreground bg-hud-grid py-12 px-4 sm:px-6 lg:px-8">
@@ -41,11 +42,13 @@ export const StyleguidePage: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <LanguageSwitcher currentLang={selectedLang} onLanguageChange={setSelectedLang} />
+            <LanguageSwitcher />
             <ThemeToggle />
-            <LiquidButton as="a" href="/" variant="secondary" size="sm">
-              Back to Home
-            </LiquidButton>
+            <Link to={`/${lang}/`}>
+              <LiquidButton variant="secondary" size="sm">
+                Back to Home
+              </LiquidButton>
+            </Link>
           </div>
         </div>
 

@@ -64,17 +64,19 @@ export const Footer: React.FC = () => {
               {t('nav_heading')}
             </h4>
             <ul className="space-y-2 font-mono text-xs">
-              {[
-                { key: 'about', n: '01' },
-                { key: 'skills', n: '02' },
-                { key: 'experience', n: '03' },
-                { key: 'projects', n: '04' },
-                { key: 'research', n: '05' },
-                { key: 'location', n: '06' },
-              ].map(({ key, n }) => (
+              {(
+                [
+                  { key: 'about', n: '01' },
+                  { key: 'skills', n: '02' },
+                  { key: 'experience', n: '03' },
+                  { key: 'projects', n: '04' },
+                  { key: 'research', n: '05' },
+                  { key: 'location', n: '06' },
+                ] as const
+              ).map(({ key, n }) => (
                 <li key={key}>
                   <a href={`#${key}`} className="hover:text-amber transition-colors">
-                    {n} // {tn(key as keyof ReturnType<typeof tn>)}
+                    {n} // {tn(key)}
                   </a>
                 </li>
               ))}
